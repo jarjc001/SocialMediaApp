@@ -2,6 +2,11 @@ DROP DATABASE IF EXISTS socialmedia;
 CREATE DATABASE socialmedia;
 USE socialmedia;
 
+-- test
+-- DROP DATABASE IF EXISTS socialmediatest;
+-- CREATE DATABASE socialmediatest;
+-- USE socialmediatest;
+
 -- CREATE primary tables for database
 
 -- account table
