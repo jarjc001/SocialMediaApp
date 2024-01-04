@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="Start Uml diagram">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestPostDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="added prop for db&#10;almost finished class diagram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/UmlClassDiagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/UmlClassDiagram.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/~$cial media app rough plan.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/~$ow Chart Twitter Copy.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704329180504</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added prop for db&#10;almost finished class diagram">
+      <created>1704371949439</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704371949439</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start Uml diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start Uml diagram" />
+    <MESSAGE value="added prop for db&#10;almost finished class diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="added prop for db&#10;almost finished class diagram" />
   </component>
 </project>
