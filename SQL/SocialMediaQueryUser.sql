@@ -24,7 +24,7 @@ WHERE (username = ? and email = ?);
 -- log in
 SELECT *
 FROM userAccounts
-WHERE (username = ? and email = ?);
+WHERE (username = ? and password = ?);
 
 
 -- add new user to db
