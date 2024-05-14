@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="created first set of objects">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/DataBaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="starting user dao&#10;changed to jdbc">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaQueryUser.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaQueryUser.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/Flow Chart Twitter Copy.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestPostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704374230546</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="starting user dao&#10;changed to jdbc">
+      <option name="closed" value="true" />
+      <created>1715597021088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715597021088</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +161,22 @@
     <MESSAGE value="Start Uml diagram" />
     <MESSAGE value="added prop for db&#10;almost finished class diagram" />
     <MESSAGE value="created first set of objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="created first set of objects" />
+    <MESSAGE value="starting user dao&#10;changed to jdbc" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting user dao&#10;changed to jdbc" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java</url>
+          <line>51</line>
+          <properties class="com.TwitterCopy.dao.UserDaoDB" method="encryptPass">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
