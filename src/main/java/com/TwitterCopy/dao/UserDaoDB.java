@@ -2,22 +2,29 @@ package com.TwitterCopy.dao;
 
 import com.TwitterCopy.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.tree.RowMapper;
+import javax.swing.tree.TreePath;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Base64;
 
 @Repository
 public class UserDaoDB implements UserDao{
 
+    ///TODO
+    // change exceptions to custom ones
+
     @Autowired
     JdbcTemplate jdbc;
 
-    @Override
-    public boolean authenticateUser(String username, String Password) {
-        return false;
-    }
 
     @Override
     public User getUserByUsername(String username) {
@@ -27,9 +34,21 @@ public class UserDaoDB implements UserDao{
         return null;
     }
 
+    //todo
+    // figure out password enter
     @Override
     public User addUser(User user) {
-        return null;
+        final String INSERT_USER = "INSERT INTO useraccounts"+
+                "(username,password,email,fullname)" +
+                " VALUES (?,?,?,?)";
+
+        jdbc.update(INSERT_USER,
+                user.getUsername(),
+                Arrays.toString(user.getPassword()),
+                user.getEmail(),
+                user.getFullName());
+
+        return user;
     }
 
     @Override
@@ -48,50 +67,76 @@ public class UserDaoDB implements UserDao{
     }
 
 
-    ///// TODO
-    public String encryptPass(String password) {
-        try {
-            //retrieve instance of the encryptor of SHA-256
-            MessageDigest digestor = MessageDigest.getInstance("SHA-256");//retrieve bytes to encrypt
-            byte[] encodedhash = digestor.digest(password.getBytes(StandardCharsets.UTF_8));
-            StringBuilder encryptionValue = new StringBuilder(2 * encodedhash.length);//perform encryption
-            for (byte b : encodedhash) {
-                String hexVal = Integer.toHexString(0xff & b);
-                if (hexVal.length() == 1) {
-                    encryptionValue.append('0');
-                }
-                encryptionValue.append(hexVal);
-            }//return encrypted value
-            return encryptionValue.toString();}
-        catch (Exception ex) {
-            return ex.getMessage();
-        }
-    }
+
+
+
+
+
+
+
+
 
 
     // Method to hash a password
-    private static String hashPassword(String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    private String hashPassword(char[] password) throws NoSuchAlgorithmException {
         byte[] salt = generateSalt();
-        PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
-        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-        byte[] hash = factory.generateSecret(spec).getEncoded();
-        return Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
-    }
-
-    // Method to hash a password using a specific salt
-    private static String hashPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
-        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-        byte[] hash = factory.generateSecret(spec).getEncoded();
+        byte[] hash = sha256(password, salt);
+        clearPassword(password); // Clear the password array
         return Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
     }
 
     // Method to generate a salt
-    private static byte[] generateSalt() {
-        // Generate a secure random salt
-        // Example: SecureRandom.getInstanceStrong().generateSeed(16);
-        return new byte[16];
+    private byte[] generateSalt() {
+        SecureRandom random = new SecureRandom();
+        byte[] salt = new byte[16];
+        random.nextBytes(salt);
+        return salt;
     }
+
+
+    // Method to hash a password using SHA-256 and a salt
+    private byte[] sha256(char[] password, byte[] salt) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(salt);
+        return md.digest(new String(password).getBytes());
+    }
+
+    // Method to clear the password array
+    private void clearPassword(char[] password) {
+        if (password != null) {
+            Arrays.fill(password, '\0');
+        }
+    }
+
+    //todo
+    @Override
+    public boolean authenticateUser(String username, String Password) {
+        final String SELECT_PASSWORD = "SELECT password FROM users WHERE username = ?";
+        try{
+            jdbc.query(SELECT_PASSWORD, new RowMapper<User>() {
+                @Override
+                public int[] getRowsForPaths(TreePath[] path) {
+                    return new int[0];
+                }
+            },username);
+        }catch (DataAccessException e){ //Username free
+            return false;
+        }
+        return false;
+    }
+
+    //todo
+    // have to add jdbc to query stored password with username
+    private static boolean authenticate(char[] passwordToCheck, String storedPassword) throws NoSuchAlgorithmException {
+
+        String[] parts = storedPassword.split(":");
+        byte[] salt = Base64.getDecoder().decode(parts[0]);
+        byte[] hash = sha256(passwordToCheck, salt);
+        clearPassword(passwordToCheck); // Clear the passwordToCheck array
+        return storedPassword.equals(Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash));
+
+    }
+
 
 
 

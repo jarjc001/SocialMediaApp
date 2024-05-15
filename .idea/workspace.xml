@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="starting user dao&#10;changed to jdbc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/service/UserServiceImpl.java" afterDir="false" />
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="before change to pasword to char[] : as Strings are immutable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaModel.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaModel.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaModel.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaModel.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestPostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715597021088</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="before change to pasword to char[] : as Strings are immutable">
+      <option name="closed" value="true" />
+      <created>1715682529866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715682529867</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,21 +169,7 @@
     <MESSAGE value="added prop for db&#10;almost finished class diagram" />
     <MESSAGE value="created first set of objects" />
     <MESSAGE value="starting user dao&#10;changed to jdbc" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting user dao&#10;changed to jdbc" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java</url>
-          <line>51</line>
-          <properties class="com.TwitterCopy.dao.UserDaoDB" method="encryptPass">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="before change to pasword to char[] : as Strings are immutable" />
+    <option name="LAST_COMMIT_MESSAGE" value="before change to pasword to char[] : as Strings are immutable" />
   </component>
 </project>
