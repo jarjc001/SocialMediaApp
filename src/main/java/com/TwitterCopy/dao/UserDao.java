@@ -6,12 +6,13 @@ import com.TwitterCopy.dto.User;
 public interface UserDao {
 
     /**
-     * To authenticate a user's username and password
+     * To authenticate a user's password with a certain username
+     *
      * @param username username
-     * @param Password password
+     * @param password password
      * @return If details are correct
      */
-    boolean authenticateUser(String username, String Password);
+    boolean authenticateUser(String username, char[] password) throws DataBaseException;
 
     /**
      * Get the user info from a given username

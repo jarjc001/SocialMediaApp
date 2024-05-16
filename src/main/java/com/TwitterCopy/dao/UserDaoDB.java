@@ -6,18 +6,14 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.tree.RowMapper;
-import javax.swing.tree.TreePath;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Base64;
 
 @Repository
-public class UserDaoDB implements UserDao{
+public class UserDaoDB implements UserDao {
 
     ///TODO
     // change exceptions to custom ones
@@ -38,7 +34,7 @@ public class UserDaoDB implements UserDao{
     // figure out password enter
     @Override
     public User addUser(User user) {
-        final String INSERT_USER = "INSERT INTO useraccounts"+
+        final String INSERT_USER = "INSERT INTO useraccounts" +
                 "(username,password,email,fullname)" +
                 " VALUES (?,?,?,?)";
 
@@ -53,6 +49,7 @@ public class UserDaoDB implements UserDao{
 
     @Override
     public boolean checkUsernameInDB(String username) {
+
         return false;
     }
 
@@ -69,23 +66,26 @@ public class UserDaoDB implements UserDao{
 
 
 
+    /**
+     * Hash a password into a string
+     *
+     * @param password password to hash
+     * @return hash password as a string
+     */
+    private String hashPassword(char[] password) throws  DataBaseException {
 
+            byte[] salt = generateSalt();
+            byte[] hash = sha256(password, salt);
+            clearPassword(password); // Clear the password array
+            return Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
 
-
-
-
-
-
-
-    // Method to hash a password
-    private String hashPassword(char[] password) throws NoSuchAlgorithmException {
-        byte[] salt = generateSalt();
-        byte[] hash = sha256(password, salt);
-        clearPassword(password); // Clear the password array
-        return Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
     }
 
-    // Method to generate a salt
+    /**
+     * generate a salt
+     *
+     * @return salt
+     */
     private byte[] generateSalt() {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
@@ -94,14 +94,28 @@ public class UserDaoDB implements UserDao{
     }
 
 
-    // Method to hash a password using SHA-256 and a salt
-    private byte[] sha256(char[] password, byte[] salt) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-        md.update(salt);
-        return md.digest(new String(password).getBytes());
+    //
+
+    /**
+     * Method to hash a password using SHA-256 and a salt into a byte[]
+     *
+     * @param password password to salt
+     * @param salt     salt
+     * @return hashed password as byte[]
+     */
+    private byte[] sha256(char[] password, byte[] salt) throws DataBaseException {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(salt);
+            return md.digest(new String(password).getBytes());
+        } catch (NoSuchAlgorithmException e) {
+            throw new DataBaseException("Encription Failed");
+        }
     }
 
-    // Method to clear the password array
+    /**
+     * Method to clear the password array
+     */
     private void clearPassword(char[] password) {
         if (password != null) {
             Arrays.fill(password, '\0');
@@ -110,34 +124,27 @@ public class UserDaoDB implements UserDao{
 
     //todo
     @Override
-    public boolean authenticateUser(String username, String Password) {
-        final String SELECT_PASSWORD = "SELECT password FROM users WHERE username = ?";
-        try{
-            jdbc.query(SELECT_PASSWORD, new RowMapper<User>() {
-                @Override
-                public int[] getRowsForPaths(TreePath[] path) {
-                    return new int[0];
-                }
-            },username);
-        }catch (DataAccessException e){ //Username free
+    public boolean authenticateUser(String username, char[] password) {
+        final String SELECT_PASSWORD = "SELECT password FROM userAccounts WHERE username = ?";
+        try {
+            // query the password in the db
+            String storedPassword = jdbc.queryForObject(SELECT_PASSWORD, String.class, username);
+            String[] parts = storedPassword.split(":");
+
+            //get the salt of the db
+            byte[] salt = Base64.getDecoder().decode(parts[0]);
+
+            //hash incoming password
+            byte[] hash = sha256(password, salt);
+
+            // Clear the passwordT char array
+            clearPassword(password);
+
+            return storedPassword.equals(Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash));
+        } catch (DataAccessException | NullPointerException | DataBaseException e) { //Wrong Username
             return false;
         }
-        return false;
     }
-
-    //todo
-    // have to add jdbc to query stored password with username
-    private static boolean authenticate(char[] passwordToCheck, String storedPassword) throws NoSuchAlgorithmException {
-
-        String[] parts = storedPassword.split(":");
-        byte[] salt = Base64.getDecoder().decode(parts[0]);
-        byte[] hash = sha256(passwordToCheck, salt);
-        clearPassword(passwordToCheck); // Clear the passwordToCheck array
-        return storedPassword.equals(Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash));
-
-    }
-
-
 
 
 }
