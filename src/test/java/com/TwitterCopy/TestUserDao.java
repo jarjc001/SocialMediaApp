@@ -47,8 +47,22 @@ public class TestUserDao {
         testPassword1 = "password1".toCharArray();
         testPassword2 = "password2".toCharArray();
 
-        testUser1 = new User(testUsername1,testPassword1,testEmail1,testEmail1);
-        testUser2 = new User(testUsername2,testPassword2,testEmail2,testEmail2);
+        //user1 in db
+        testUser1 = new User(testUsername1,testPassword1,testEmail1,testFullName1);
+
+        //user2 not in db
+        testUser2 = new User(testUsername2,testPassword2,testEmail2,testFullName2);
+
+        // user1
+//        if(userDao.checkUsernameInDB(testUsername1)){
+//            //delete user
+//        }
+        // add user to db
+
+        // user2
+//        if(userDao.checkUsernameInDB(testUsername2)){
+//            //delete user
+//        }
 
 
     }
@@ -66,13 +80,12 @@ public class TestUserDao {
 
         // 1.
         Assertions.assertTrue(userDao.authenticateUser(testUsername1, testPassword1), "TestUser1 with correct password");
-        Assertions.assertTrue(userDao.authenticateUser(testUsername2, testPassword2), "TestUser2 with correct password");
+
 
         // 2.
         char[] wrongPassword = "passwordNotInDataBase".toCharArray();
         Assertions.assertFalse(userDao.authenticateUser(testUsername1, wrongPassword), "TestUser1 with wrong password");
-        wrongPassword = "passwordNotInDataBase".toCharArray();
-        Assertions.assertFalse(userDao.authenticateUser(testUsername2, wrongPassword), "TestUser2 with wrong password");
+
 
         // 3.
         String usernameNotInDB = "UsernameNotInDb";
@@ -80,16 +93,45 @@ public class TestUserDao {
         Assertions.assertFalse(userDao.authenticateUser(usernameNotInDB, wrongPassword), "User not in db");
 
         // 4.
-        testPassword1 = "password1".toCharArray();
-        testPassword2 = "password2".toCharArray();
         Assertions.assertFalse(userDao.authenticateUser(testUsername1, testPassword2), "Password in database, but not match username");
-        Assertions.assertFalse(userDao.authenticateUser(testUsername2, testPassword1), "Password in database, but not match username");
+
 
     }
 
+    //TODO
     @Test
-    void testAddUser(){
+    void testAddUser() throws DataBaseException {
         // add a user to the database
+
+        //test cases
+        // 1. add a user into the db
+        // 2. try to add incomplete user
+
+
+        // 1.
+        char [] sameAsTestPassword2 = "password2".toCharArray();
+        userDao.addUser(testUser2);
+
+        // check if password in testuser2 object has been cleared
+        Assertions.assertNotEquals(testPassword2,sameAsTestPassword2, "Password in User object has been cleared after adding user to DB");
+
+        Assertions.assertTrue(userDao.authenticateUser(testUser2.getUsername(),sameAsTestPassword2), "User has been added to DB");
+
+
+        // 2.
+        // has no password as char[] in it
+//        User testUser3 = new User();
+//
+//        try {
+//            userDao.addUser(testUser3);
+//        }catch (DataBaseException e){
+//            Assertions.assertThrows(void,userDao.addUser(testUser3));
+//            Assertions.assertE
+// )
+//        }
+//
+//
+//        Assertions.assertFalse(userDao.checkUsernameInDB(testUser3.getUsername()), "User is not in DB");
 
 
 

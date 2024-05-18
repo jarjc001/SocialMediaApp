@@ -38,11 +38,15 @@ public class UserDaoDB implements UserDao {
                 "(username,password,email,fullname)" +
                 " VALUES (?,?,?,?)";
 
-        jdbc.update(INSERT_USER,
-                user.getUsername(),
-                hashPassword(user.getPassword()),
-                user.getEmail(),
-                user.getFullName());
+        try {
+            jdbc.update(INSERT_USER,
+                    user.getUsername(),
+                    hashPassword(user.getPassword()),
+                    user.getEmail(),
+                    user.getFullName());
+        }catch (NullPointerException e){
+            throw new DataBaseException("No password with user");
+        }
 
 
         return user;
