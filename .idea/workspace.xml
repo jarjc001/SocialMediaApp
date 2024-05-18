@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="finishing test for add user method&#10;add assert throw">
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="finished test for add user method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/test/SocialMediaTestQueryUser.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/test/SocialMediaTestQueryUser.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +75,7 @@
       <recent name="com.TwitterCopy" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestUserDao.testAddUser">
+  <component name="RunManager" selected="JUnit.TestUserDao">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.App" />
       <module name="TwitterCopy" />
@@ -84,6 +85,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUserDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TwitterCopy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.TwitterCopy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
+      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestUserDao" />
         <item itemvalue="JUnit.TestUserDao.testAddUser" />
         <item itemvalue="JUnit.TestUserDao.testAuthenticateUser" />
         <item itemvalue="Application.App" />
@@ -221,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716026085951</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finished test for add user method">
+      <option name="closed" value="true" />
+      <created>1716049199498</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716049199498</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +270,7 @@
     <MESSAGE value="finished authenticateUser method and completed password encryption. created unit test for it" />
     <MESSAGE value="completed check usernae in db method" />
     <MESSAGE value="finishing test for add user method&#10;add assert throw" />
-    <option name="LAST_COMMIT_MESSAGE" value="finishing test for add user method&#10;add assert throw" />
+    <MESSAGE value="finished test for add user method" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished test for add user method" />
   </component>
 </project>

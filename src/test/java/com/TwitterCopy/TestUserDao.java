@@ -54,15 +54,21 @@ public class TestUserDao {
         testUser2 = new User(testUsername2,testPassword2,testEmail2,testFullName2);
 
         // user1
-//        if(userDao.checkUsernameInDB(testUsername1)){
-//            //delete user
-//        }
-        // add user to db
+        if(userDao.checkUsernameInDB(testUsername1)){
+            userDao.deleteUser(testUser1);
+        }
+        try {
+            userDao.addUser(testUser1);
+        } catch (DataBaseException e) {
+            System.out.println(e.getMessage());
+        }
 
         // user2
-//        if(userDao.checkUsernameInDB(testUsername2)){
-//            //delete user
-//        }
+        if(userDao.checkUsernameInDB(testUsername2)){
+            userDao.deleteUser(testUser2);
+        }
+
+        testPassword1 = "password1".toCharArray();
 
 
     }
@@ -128,9 +134,7 @@ public class TestUserDao {
         }catch (DataBaseException e){
             testPass = true;
         }
-
         Assertions.assertTrue(testPass,"User had no password");
-
     }
 
 }

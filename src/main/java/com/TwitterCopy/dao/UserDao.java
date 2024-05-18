@@ -42,7 +42,7 @@ public interface UserDao {
      * have to have username and password
      * @param user
      */
-    void deleteuser(User user);
+    void deleteUser(User user);
 
 
 }

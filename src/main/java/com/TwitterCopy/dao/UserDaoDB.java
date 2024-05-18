@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -21,7 +22,7 @@ public class UserDaoDB implements UserDao {
     @Autowired
     JdbcTemplate jdbc;
 
-
+    //todo
     @Override
     public User getUserByUsername(String username) {
 
@@ -30,8 +31,7 @@ public class UserDaoDB implements UserDao {
         return null;
     }
 
-    //todo
-    // figure out password enter
+
     @Override
     public User addUser(User user) throws DataBaseException {
         final String INSERT_USER = "INSERT INTO useraccounts" +
@@ -64,14 +64,37 @@ public class UserDaoDB implements UserDao {
 
     }
 
+    //todo
     @Override
     public void updateUser(User user) {
 
     }
 
+    //todo
     @Override
-    public void deleteuser(User user) {
+    @Transactional
+    public void deleteUser(User user) {
+        //subscriptions
+        final String DELETE_SUBSCRIPTIONS_1 = "DELETE FROM subscriptions WHERE username = ?";
+        final String DELETE_SUBSCRIPTIONS_2 = "DELETE FROM subscriptions WHERE subUsers = ?";
+        jdbc.update(DELETE_SUBSCRIPTIONS_1, user.getUsername());
+        jdbc.update(DELETE_SUBSCRIPTIONS_2, user.getUsername());
 
+        //comments
+        final String DELETE_COMMENTS = "DELETE FROM comments WHERE username = ?";
+        jdbc.update(DELETE_COMMENTS, user.getUsername());
+
+        //likes
+        final String DELETE_LIKES = "DELETE FROM likes WHERE username = ?";
+        jdbc.update(DELETE_LIKES, user.getUsername());
+
+        //posts
+        final String DELETE_POSTS = "DELETE FROM posts WHERE username = ?";
+        jdbc.update(DELETE_POSTS, user.getUsername());
+
+        //userAccounts
+        final String DELETE_USER = "DELETE FROM userAccounts WHERE username = ?";
+        jdbc.update(DELETE_USER, user.getUsername());
     }
 
 
