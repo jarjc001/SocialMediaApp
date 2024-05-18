@@ -44,10 +44,9 @@ public class UserDaoDB implements UserDao {
                     hashPassword(user.getPassword()),
                     user.getEmail(),
                     user.getFullName());
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             throw new DataBaseException("No password with user");
         }
-
 
         return user;
     }
@@ -57,7 +56,7 @@ public class UserDaoDB implements UserDao {
         final String SELECT_USERNAME = "SELECT * FROM userAccounts WHERE username = ?";
         try {
             User user = jdbc.queryForObject(SELECT_USERNAME, new UserMapper(), username);
-        }catch (DataAccessException e){ //Username free
+        } catch (DataAccessException e) { //Username free
             return false;
         }
         return true;    //Username already Taken
@@ -67,10 +66,14 @@ public class UserDaoDB implements UserDao {
     //todo
     @Override
     public void updateUser(User user) {
+        final String UPDATE_USER = "UPDATE userAccounts SET email = ?, fullname = ? WHERE username = ?";
 
+        jdbc.update(UPDATE_USER,
+                user.getEmail(),
+                user.getFullName(),
+                user.getUsername());
     }
 
-    //todo
     @Override
     @Transactional
     public void deleteUser(User user) {
@@ -98,20 +101,18 @@ public class UserDaoDB implements UserDao {
     }
 
 
-
-
     /**
      * Hash a password into a string
      *
      * @param password password to hash
      * @return hash password as a string
      */
-    private String hashPassword(char[] password) throws  DataBaseException {
+    private String hashPassword(char[] password) throws DataBaseException {
 
-            byte[] salt = generateSalt();
-            byte[] hash = sha256(password, salt);
-            clearPassword(password); // Clear the password array
-            return Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
+        byte[] salt = generateSalt();
+        byte[] hash = sha256(password, salt);
+        clearPassword(password); // Clear the password array
+        return Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
 
     }
 
