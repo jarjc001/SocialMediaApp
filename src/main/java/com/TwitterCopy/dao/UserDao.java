@@ -24,7 +24,7 @@ public interface UserDao {
      * @param user object with the info of new user
      * @return the user that has been added
      */
-    User addUser(User user);
+    User addUser(User user) throws DataBaseException;
 
     /**
      * Checks if the username has been taken in db

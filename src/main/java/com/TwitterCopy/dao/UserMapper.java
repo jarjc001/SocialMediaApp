@@ -12,7 +12,7 @@ final class UserMapper implements RowMapper<User> {
     public User mapRow(ResultSet rs, int rowNum) throws SQLException {
         User user = new User();
         user.setUsername(rs.getString("username"));
-        user.setPassword(rs.getString("password").toCharArray());
+        user.setHashPassword(rs.getString("password"));
         user.setEmail(rs.getString("email"));
         user.setFullName(rs.getString("fullname"));
         return user;

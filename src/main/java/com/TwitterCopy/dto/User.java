@@ -13,6 +13,8 @@ public class User {
 
     private char[] password;
 
+    private String hashPassword;
+
     private String email;
 
     private String fullName;
@@ -24,9 +26,18 @@ public class User {
         this.fullName = fullName;
     }
 
+
+
+    public User(String username, String hashPassword, String email, String fullName) {
+        this.username = username;
+        this.hashPassword = hashPassword;
+        this.email = email;
+        this.fullName = fullName;
+    }
+
     public User(){
         this.username = "";
-
+        this.hashPassword = "";
         this.email = "";
         this.fullName = "";
     }
@@ -37,6 +48,10 @@ public class User {
 
     public char[]  getPassword() {
         return password;
+    }
+
+    public String getHashPassword() {
+        return hashPassword;
     }
 
     public String getEmail() {
@@ -53,6 +68,10 @@ public class User {
 
     public void setPassword(char[]  password) {
         this.password = password;
+    }
+
+    public void setHashPassword(String hashPassword) {
+        this.hashPassword = hashPassword;
     }
 
     public void setEmail(String email) {

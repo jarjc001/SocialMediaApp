@@ -3,6 +3,7 @@ package com.TwitterCopy;
 
 import com.TwitterCopy.dao.DataBaseException;
 import com.TwitterCopy.dao.UserDao;
+import com.TwitterCopy.dto.User;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,12 +27,16 @@ public class TestUserDao {
     String testEmail1 = "test1@email.com";
     String testFullName1 = "test name1";
 
+    User testUser1;
+
     //user2
     String testUsername2 = "testUsername2";
     char[] testPassword2;
     String hashTestPassword2 = "qYfpzqf2NkXVDOSdBGyRTQ==:g7rsUGTMBs6tclMeIO25+PPOSgEr/8lY6VS3pEBt32k=";
     String testEmail2 = "test2@email.com";
     String testFullName2 = "test name2";
+
+    User testUser2;
 
 
     public TestUserDao() {
@@ -41,6 +46,9 @@ public class TestUserDao {
     void setUp() {
         testPassword1 = "password1".toCharArray();
         testPassword2 = "password2".toCharArray();
+
+        testUser1 = new User(testUsername1,testPassword1,testEmail1,testEmail1);
+        testUser2 = new User(testUsername2,testPassword2,testEmail2,testEmail2);
 
 
     }
@@ -76,6 +84,14 @@ public class TestUserDao {
         testPassword2 = "password2".toCharArray();
         Assertions.assertFalse(userDao.authenticateUser(testUsername1, testPassword2), "Password in database, but not match username");
         Assertions.assertFalse(userDao.authenticateUser(testUsername2, testPassword1), "Password in database, but not match username");
+
+    }
+
+    @Test
+    void testAddUser(){
+        // add a user to the database
+
+
 
     }
 

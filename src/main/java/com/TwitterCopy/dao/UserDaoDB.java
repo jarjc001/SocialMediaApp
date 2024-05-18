@@ -33,24 +33,31 @@ public class UserDaoDB implements UserDao {
     //todo
     // figure out password enter
     @Override
-    public User addUser(User user) {
+    public User addUser(User user) throws DataBaseException {
         final String INSERT_USER = "INSERT INTO useraccounts" +
                 "(username,password,email,fullname)" +
                 " VALUES (?,?,?,?)";
 
         jdbc.update(INSERT_USER,
                 user.getUsername(),
-                Arrays.toString(user.getPassword()),
+                hashPassword(user.getPassword()),
                 user.getEmail(),
                 user.getFullName());
+
 
         return user;
     }
 
     @Override
     public boolean checkUsernameInDB(String username) {
+        final String SELECT_USERNAME = "SELECT * FROM userAccounts WHERE username = ?";
+        try {
+            User user = jdbc.queryForObject(SELECT_USERNAME, new UserMapper(), username);
+        }catch (DataAccessException e){ //Username free
+            return false;
+        }
+        return true;    //Username already Taken
 
-        return false;
     }
 
     @Override
@@ -122,13 +129,13 @@ public class UserDaoDB implements UserDao {
         }
     }
 
-    //todo
     @Override
     public boolean authenticateUser(String username, char[] password) {
         final String SELECT_PASSWORD = "SELECT password FROM userAccounts WHERE username = ?";
         try {
             // query the password in the db
             String storedPassword = jdbc.queryForObject(SELECT_PASSWORD, String.class, username);
+            assert storedPassword != null;
             String[] parts = storedPassword.split(":");
 
             //get the salt of the db

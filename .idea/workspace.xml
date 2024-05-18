@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="edit authenticate method. might sepearte the password part of user">
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="finished authenticateUser method and completed password encryption. created unit test for it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/SocialMediaQueryUser.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SocialMediaQueryUser.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/PasswordMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/test/SocialMediaTestQueryUser.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/test/SocialMediaTestQueryUser.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715791362004</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finished authenticateUser method and completed password encryption. created unit test for it">
+      <option name="closed" value="true" />
+      <created>1715866366262</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715866366262</updated>
+    </task>
+    <task id="LOCAL-00008" summary="finished authenticateUser method and completed password encryption. created unit test for it">
+      <option name="closed" value="true" />
+      <created>1715866376009</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715866376009</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +213,7 @@
     <MESSAGE value="starting user dao&#10;changed to jdbc" />
     <MESSAGE value="before change to pasword to char[] : as Strings are immutable" />
     <MESSAGE value="edit authenticate method. might sepearte the password part of user" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit authenticate method. might sepearte the password part of user" />
+    <MESSAGE value="finished authenticateUser method and completed password encryption. created unit test for it" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished authenticateUser method and completed password encryption. created unit test for it" />
   </component>
 </project>
