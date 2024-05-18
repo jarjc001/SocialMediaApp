@@ -120,20 +120,16 @@ public class TestUserDao {
 
         // 2.
         // has no password as char[] in it
-//        User testUser3 = new User();
-//
-//        try {
-//            userDao.addUser(testUser3);
-//        }catch (DataBaseException e){
-//            Assertions.assertThrows(void,userDao.addUser(testUser3));
-//            Assertions.assertE
-// )
-//        }
-//
-//
-//        Assertions.assertFalse(userDao.checkUsernameInDB(testUser3.getUsername()), "User is not in DB");
+        User testUser3 = new User();
+        boolean testPass = false;
 
+        try {
+            userDao.addUser(testUser3);
+        }catch (DataBaseException e){
+            testPass = true;
+        }
 
+        Assertions.assertTrue(testPass,"User had no password");
 
     }
 
