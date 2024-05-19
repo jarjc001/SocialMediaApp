@@ -22,13 +22,20 @@ public class UserDaoDB implements UserDao {
     @Autowired
     JdbcTemplate jdbc;
 
-    //todo
+
     @Override
-    public User getUserByUsername(String username) {
+    public User getUserByUsername(String username) throws DataBaseException {
+        User user;
 
-        User newUser = new User();
+        final String SELECT_USERNAME = "SELECT * FROM userAccounts WHERE username = ?";
+        try {
+            user = jdbc.queryForObject(SELECT_USERNAME, new UserMapper(), username);
+        } catch (DataAccessException e) { //Username not in db
+            throw new DataBaseException("Username not in DB");
+        }
+        return user;
 
-        return null;
+
     }
 
 
@@ -63,15 +70,29 @@ public class UserDaoDB implements UserDao {
 
     }
 
-    //todo
+
     @Override
-    public void updateUser(User user) {
+    public void updateUserExtraInfo(User user) {
         final String UPDATE_USER = "UPDATE userAccounts SET email = ?, fullname = ? WHERE username = ?";
 
         jdbc.update(UPDATE_USER,
                 user.getEmail(),
                 user.getFullName(),
                 user.getUsername());
+    }
+
+    //todo
+    @Override
+    public void updateUserPassword(String username, char[] password) throws DataBaseException {
+        final String UPDATE_USER = "UPDATE userAccounts SET password = ? WHERE username = ?";
+
+        try {
+            jdbc.update(UPDATE_USER,
+                    hashPassword(password),
+                    username);
+        } catch (DataBaseException e) {
+            throw new DataBaseException("Could not update password");
+        }
     }
 
     @Override

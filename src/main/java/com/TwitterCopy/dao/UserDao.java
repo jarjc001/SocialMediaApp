@@ -33,10 +33,17 @@ public interface UserDao {
      */
     boolean checkUsernameInDB(String username);
 
-    /**Update info of a user in database
+    /**Update info of a user in database, will update email or full name
      * @param user user object with the edited info
      */
-    void updateUser(User user);
+    void updateUserExtraInfo(User user);
+
+    /**
+     * updtae the password for a given user in the database
+     * @param username username of user
+     * @param password new password of user
+     */
+    void updateUserPassword(String username, char[] password) throws DataBaseException;
 
     /**delete user from database,
      * have to have username and password

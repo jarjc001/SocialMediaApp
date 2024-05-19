@@ -5,6 +5,7 @@ import com.TwitterCopy.dao.DataBaseException;
 import com.TwitterCopy.dao.UserDao;
 import com.TwitterCopy.dto.User;
 import org.junit.Before;
+import org.junit.internal.runners.statements.Fail;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,13 +49,13 @@ public class TestUserDao {
         testPassword2 = "password2".toCharArray();
 
         //user1 in db
-        testUser1 = new User(testUsername1,testPassword1,testEmail1,testFullName1);
+        testUser1 = new User(testUsername1, testPassword1, testEmail1, testFullName1);
 
         //user2 not in db
-        testUser2 = new User(testUsername2,testPassword2,testEmail2,testFullName2);
+        testUser2 = new User(testUsername2, testPassword2, testEmail2, testFullName2);
 
         // user1
-        if(userDao.checkUsernameInDB(testUsername1)){
+        if (userDao.checkUsernameInDB(testUsername1)) {
             userDao.deleteUser(testUser1);
         }
         try {
@@ -64,7 +65,7 @@ public class TestUserDao {
         }
 
         // user2
-        if(userDao.checkUsernameInDB(testUsername2)){
+        if (userDao.checkUsernameInDB(testUsername2)) {
             userDao.deleteUser(testUser2);
         }
 
@@ -104,7 +105,7 @@ public class TestUserDao {
 
     }
 
-    //TODO
+
     @Test
     void testAddUser() throws DataBaseException {
         // add a user to the database
@@ -115,13 +116,13 @@ public class TestUserDao {
 
 
         // 1.
-        char [] sameAsTestPassword2 = "password2".toCharArray();
+        char[] sameAsTestPassword2 = "password2".toCharArray();
         userDao.addUser(testUser2);
 
         // check if password in testuser2 object has been cleared
-        Assertions.assertNotEquals(testPassword2,sameAsTestPassword2, "Password in User object has been cleared after adding user to DB");
+        Assertions.assertNotEquals(testPassword2, sameAsTestPassword2, "Password in User object has been cleared after adding user to DB");
 
-        Assertions.assertTrue(userDao.authenticateUser(testUser2.getUsername(),sameAsTestPassword2), "User has been added to DB");
+        Assertions.assertTrue(userDao.authenticateUser(testUser2.getUsername(), sameAsTestPassword2), "User has been added to DB");
 
 
         // 2.
@@ -131,10 +132,68 @@ public class TestUserDao {
 
         try {
             userDao.addUser(testUser3);
-        }catch (DataBaseException e){
+        } catch (DataBaseException e) {
             testPass = true;
         }
-        Assertions.assertTrue(testPass,"User had no password");
+        Assertions.assertTrue(testPass, "User had no password");
+    }
+
+
+    @Test
+    void testGetUser() {
+        // 1. right username
+        // 2. wrong username
+
+        //1.
+        boolean failTest = false;
+        User testUserFromDB = new User();
+
+        try {
+            testUserFromDB = userDao.getUserByUsername(testUsername1);
+        } catch (DataBaseException e) {
+            failTest = true;
+        }
+
+        Assertions.assertFalse(failTest, "Failed to get User from DB");
+
+        // clear passwords
+        // the get method gives a null password, while the already stored user had its password cleared
+        testUser1.setPassword(new char[0]);
+        testUserFromDB.setPassword(new char[0]);
+
+        Assertions.assertEquals(testUser1, testUserFromDB, "Got all the user info");
+
+
+        // 2.
+        String wrongUsername = "UsernameNotInDB";
+        try {
+            testUserFromDB = userDao.getUserByUsername(wrongUsername);
+            failTest = true;
+        } catch (DataBaseException e) {
+            failTest = false;
+        }
+
+        Assertions.assertFalse(failTest, "Username not in DB");
+
+
+    }
+
+    //todo
+    @Test
+    void testDeleteUser(){
+
+    }
+
+    //todo
+    @Test
+    void testUpdateUserPassword(){
+
+    }
+
+    //todo
+    @Test
+    void testUpdateUserExtraInfo(){
+
     }
 
 }
