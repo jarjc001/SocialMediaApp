@@ -1,4 +1,4 @@
-package com.TwitterCopy.dao;
+package com.SocialMediaAppUser.dao;
 
 public class DataBaseException extends Exception{
 

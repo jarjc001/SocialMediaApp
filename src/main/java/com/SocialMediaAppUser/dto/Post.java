@@ -1,4 +1,4 @@
-package com.TwitterCopy.dto;
+package com.SocialMediaAppUser.dto;
 
 import java.sql.Timestamp;
 import java.util.Objects;

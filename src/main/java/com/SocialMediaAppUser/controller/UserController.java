@@ -1,6 +1,6 @@
-package com.TwitterCopy.controller;
+package com.SocialMediaAppUser.controller;
 
-import com.TwitterCopy.dao.UserDao;
+import com.SocialMediaAppUser.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

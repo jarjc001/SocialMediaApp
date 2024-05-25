@@ -1,11 +1,9 @@
-package com.TwitterCopy;
+package com.SocialMediaAppUser;
 
 
-import com.TwitterCopy.dao.DataBaseException;
-import com.TwitterCopy.dao.UserDao;
-import com.TwitterCopy.dto.User;
-import org.junit.Before;
-import org.junit.internal.runners.statements.Fail;
+import com.SocialMediaAppUser.dao.DataBaseException;
+import com.SocialMediaAppUser.dao.UserDao;
+import com.SocialMediaAppUser.dto.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +22,6 @@ public class TestUserDao {
     // user1
     String testUsername1 = "testUsername1";
     char[] testPassword1;
-    String hashTestPassword1 = "CNrWX1fB/zo1klU+U1/iPA==:mSYiB/gV71idejmz21Cf+YQwKJtJIeOi/SPzsmvi1jc=";
     String testEmail1 = "test1@email.com";
     String testFullName1 = "test name1";
 
@@ -33,7 +30,6 @@ public class TestUserDao {
     //user2
     String testUsername2 = "testUsername2";
     char[] testPassword2;
-    String hashTestPassword2 = "qYfpzqf2NkXVDOSdBGyRTQ==:g7rsUGTMBs6tclMeIO25+PPOSgEr/8lY6VS3pEBt32k=";
     String testEmail2 = "test2@email.com";
     String testFullName2 = "test name2";
 
@@ -156,11 +152,6 @@ public class TestUserDao {
 
         Assertions.assertFalse(failTest, "Failed to get User from DB");
 
-        // clear passwords
-        // the get method gives a null password, while the already stored user had its password cleared
-        testUser1.setPassword(new char[0]);
-        testUserFromDB.setPassword(new char[0]);
-
         Assertions.assertEquals(testUser1, testUserFromDB, "Got all the user info");
 
 
@@ -169,8 +160,7 @@ public class TestUserDao {
         try {
             testUserFromDB = userDao.getUserByUsername(wrongUsername);
             failTest = true;
-        } catch (DataBaseException e) {
-            failTest = false;
+        } catch (DataBaseException ignored) {
         }
 
         Assertions.assertFalse(failTest, "Username not in DB");
@@ -178,21 +168,54 @@ public class TestUserDao {
 
     }
 
-    //todo
+
     @Test
-    void testDeleteUser(){
+    void testDeleteUser() {
+        // 1. delete user that is in db
+        // 2. delete user not in db
+
+        // 1.
+        Assertions.assertTrue(userDao.checkUsernameInDB(testUsername1),"User 1 before being deleted from DB");
+
+        userDao.deleteUser(testUser1);
+
+        Assertions.assertFalse(userDao.checkUsernameInDB(testUsername1),"User 1 has been deleted from DB");
+
+
+        // 2.
+        Assertions.assertFalse(userDao.checkUsernameInDB(testUsername2),"User 2 is not in the DB");
+
+        boolean errorHappen = false;
+
+        try {
+            userDao.deleteUser(testUser2);
+        }catch (Exception e){
+            errorHappen = true;
+        }
+
+        Assertions.assertFalse(userDao.checkUsernameInDB(testUsername2),"User 2 still not in the DB");
+        Assertions.assertFalse(errorHappen,"Delete User method did not cause an error");
 
     }
 
     //todo
     @Test
-    void testUpdateUserPassword(){
+    void testUpdateUserPassword() {
+        // 1. change password
+        // 2. will it Authenticate User
+
+        // 1.
+        User oldUser = testUser1;
+        char[] newPassword= "newPassword".toCharArray();
+
+
+
 
     }
 
     //todo
     @Test
-    void testUpdateUserExtraInfo(){
+    void testUpdateUserExtraInfo() {
 
     }
 

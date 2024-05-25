@@ -1,4 +1,4 @@
-package com.TwitterCopy;
+package com.SocialMediaAppUser;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

@@ -1,6 +1,6 @@
-package com.TwitterCopy.dao;
+package com.SocialMediaAppUser.dao;
 
-import com.TwitterCopy.dto.User;
+import com.SocialMediaAppUser.dto.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

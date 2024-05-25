@@ -1,6 +1,6 @@
-package com.TwitterCopy.dao;
+package com.SocialMediaAppUser.dao;
 
-import com.TwitterCopy.dto.User;
+import com.SocialMediaAppUser.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="start update user method, need to write test for it,&#10;and do a password method aswell. may change name of update user method">
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="completed tests for get user, need to finish tests for delete user and update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/test/SocialMediaTestQueryUser.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/test/SocialMediaTestQueryUser.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/TestApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/TestApplicationConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/DataBaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/DataBaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/UserDaoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dto/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dto/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dto/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TwitterCopy/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/TwitterCopy/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/SocialMediaAppUser/TestUserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,16 +89,18 @@
       <recent name="com.TwitterCopy" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestUserDao.testGetUser">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.App" />
-      <module name="TwitterCopy" />
+  <component name="RunManager" selected="JUnit.TestUserDao (1)">
+    <configuration name="TestUserDao (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SocialMediaAppUser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
+          <option name="PATTERN" value="com.SocialMediaAppUser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.SocialMediaAppUser" />
+      <option name="MAIN_CLASS_NAME" value="com.SocialMediaAppUser.TestUserDao" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,7 +136,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestUserDao.testAuthenticateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserDao.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TwitterCopy" />
       <extension name="coverage">
         <pattern>
@@ -130,7 +146,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.TwitterCopy" />
       <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
-      <option name="METHOD_NAME" value="testAuthenticateUser" />
+      <option name="METHOD_NAME" value="testDeleteUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestUserDao (1)" />
+        <item itemvalue="JUnit.TestUserDao" />
+        <item itemvalue="JUnit.TestUserDao.testDeleteUser" />
         <item itemvalue="JUnit.TestUserDao.testGetUser" />
         <item itemvalue="JUnit.TestUserDao.testAddUser" />
-        <item itemvalue="JUnit.TestUserDao" />
-        <item itemvalue="JUnit.TestUserDao.testAuthenticateUser" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -279,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716053329843</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="completed tests for get user, need to finish tests for delete user and update">
+      <option name="closed" value="true" />
+      <created>1716140529262</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716140529262</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,6 +330,7 @@
     <MESSAGE value="finished test for add user method" />
     <MESSAGE value="complete delete user method" />
     <MESSAGE value="start update user method, need to write test for it,&#10;and do a password method aswell. may change name of update user method" />
-    <option name="LAST_COMMIT_MESSAGE" value="start update user method, need to write test for it,&#10;and do a password method aswell. may change name of update user method" />
+    <MESSAGE value="completed tests for get user, need to finish tests for delete user and update" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed tests for get user, need to finish tests for delete user and update" />
   </component>
 </project>

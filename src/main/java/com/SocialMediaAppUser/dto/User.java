@@ -1,4 +1,4 @@
-package com.TwitterCopy.dto;
+package com.SocialMediaAppUser.dto;
 
 
 
@@ -97,11 +97,11 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(username, user.username) && Arrays.equals(password, user.password) && Objects.equals(email, user.email) && Objects.equals(fullName, user.fullName);
+        return Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(fullName, user.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, Arrays.hashCode(password), email, fullName);
+        return Objects.hash(username, email, fullName);
     }
 }
