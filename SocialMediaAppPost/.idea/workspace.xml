@@ -5,32 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="completed tests for get user, need to finish tests for delete user and update">
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/SocialMediaUserApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/TestApplicationConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dao/DataBaseException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dao/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dao/UserDaoDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dao/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dto/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dto/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/dto/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/SocialMediaAppUser/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/java/com/SocialMediaAppUser/TestUserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/SocialMediaPostApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/TestApplicationConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/DataBaseException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/PostDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/PostDaoDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/PostMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dto/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dto/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dto/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/SocialMediaAppPost/TestPostDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/SocialMediaUserApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/TestApplicationConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/DataBaseException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/UserDaoDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dto/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dto/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dto/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/test/java/com/SocialMediaAppUser/TestUserDao.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,18 +80,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/theon/Documents/Important_fouders/Java/SocialMediaApp",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/theon/Documents/Important_fouders/Java/SocialMediaApp&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\theon\Documents\Important_fouders\Java\TwitterCopy\src\test" />
@@ -187,6 +191,19 @@
       <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
       <option name="METHOD_NAME" value="testGetUser" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SocialMediaAppPost" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SocialMediaAppPost" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
