@@ -4,36 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="starting microservice part 2">
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppPost/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/SocialMediaPostApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/TestApplicationConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/controller/PostController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dao/DataBaseException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dao/PostDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dao/PostDaoDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dao/PostMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dto/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dto/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/dto/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/main/java/com/SocialMediaAppPost/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppPost/src/test/java/com/SocialMediaAppPost/TestPostDao.java" beforeDir="false" />
+    <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="starting microservice part 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/SocialMediaUserApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/TestApplicationConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/DataBaseException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/UserDaoDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dao/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dto/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dto/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/dto/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppUser/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/SocialMediaAppUser/TestUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/socialmediaapp/socialmediaappuser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/socialmediaapp/socialmediaappuser/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,45 +73,30 @@
       <recent name="com.TwitterCopy" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestUserDao (1)">
+  <component name="RunManager" selected="Application.SocialMediaUserApplication">
     <configuration name="SocialMediaUserApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.SocialMediaAppUser.SocialMediaUserApplication" />
-      <module name="SocialMediaAppUser" />
+      <option name="MAIN_CLASS_NAME" value="com.socialmediaapp.socialmediaappuser.SocialMediaUserApplication" />
+      <module name="social-media-app-user" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.SocialMediaAppUser.*" />
+          <option name="PATTERN" value="com.socialmediaapp.socialmediaappuser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialMediaAppUser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.SocialMediaAppUser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.SocialMediaAppUser" />
-      <option name="MAIN_CLASS_NAME" value="com.SocialMediaAppUser.TestUserDao" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="TestUserDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TwitterCopy" />
+      <module name="social-media-app-user" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
+          <option name="PATTERN" value="com.socialmediaapp.socialmediaappuser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
+      <option name="PACKAGE_NAME" value="com.socialmediaapp.socialmediaappuser" />
+      <option name="MAIN_CLASS_NAME" value="com.socialmediaapp.socialmediaappuser.TestUserDao" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,49 +113,14 @@
       <option name="PACKAGE_NAME" value="com.SocialMediaAppUser" />
       <option name="MAIN_CLASS_NAME" value="com.SocialMediaAppUser.TestUserDao" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TwitterCopy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao.testGetUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TwitterCopy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
-      <option name="METHOD_NAME" value="testGetUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestUserDao (1)" />
         <item itemvalue="Application.SocialMediaUserApplication" />
         <item itemvalue="JUnit.TestUserDao" />
-        <item itemvalue="JUnit.TestUserDao.testDeleteUser" />
-        <item itemvalue="JUnit.TestUserDao.testGetUser" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716676153826</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="starting microservice part 3">
+      <option name="closed" value="true" />
+      <created>1716825032931</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716825032931</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,6 +322,7 @@
     <MESSAGE value="completed tests for get user, need to finish tests for delete user and update" />
     <MESSAGE value="start microservice" />
     <MESSAGE value="starting microservice part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting microservice part 2" />
+    <MESSAGE value="starting microservice part 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting microservice part 3" />
   </component>
 </project>
