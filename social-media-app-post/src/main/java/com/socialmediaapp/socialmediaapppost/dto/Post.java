@@ -5,30 +5,55 @@ import java.util.Objects;
 
 public class Post {
 
-    private long postID;
+    //todo
+    // may change user object to just username
+
+    private long postId;
     private User user;
+    private String username;
     private String content;
     private Timestamp timePost;
 
-    public Post(long postID, User user, String content, Timestamp timePost) {
-        this.postID = postID;
+    public Post(long postId, User user, String content, Timestamp timePost) {
+        this.postId = postId;
         this.user = user;
         this.content = content;
         this.timePost = timePost;
     }
 
+    /**
+     * Use this one for creating new posts into the db
+     * @param user user
+     * @param content content
+     * @param timePost time post
+     */
     public Post(User user, String content, Timestamp timePost) {
         this.user = user;
         this.content = content;
         this.timePost = timePost;
     }
 
-    public long getPostID() {
-        return postID;
+    public Post(long postId, String username, String content, Timestamp timePost) {
+        this.postId = postId;
+        this.username = username;
+        this.content = content;
+        this.timePost = timePost;
     }
 
-    public void setPostID(long postID) {
-        this.postID = postID;
+    public Post(String username, String content, Timestamp timePost) {
+        this.username = username;
+        this.content = content;
+        this.timePost = timePost;
+    }
+
+
+
+    public long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(long postId) {
+        this.postId = postId;
     }
 
     public User getUser() {
@@ -37,6 +62,14 @@ public class Post {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getContent() {
@@ -55,26 +88,27 @@ public class Post {
         this.timePost = timePost;
     }
 
-    @Override
-    public String toString() {
-        return "Post{" +
-                "postID=" + postID +
-                ", username='" + user + '\'' +
-                ", content='" + content + '\'' +
-                ", timePost=" + timePost +
-                '}';
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return postID == post.postID && Objects.equals(user, post.user) && Objects.equals(content, post.content) && Objects.equals(timePost, post.timePost);
+        return postId == post.postId && Objects.equals(username, post.username) && Objects.equals(content, post.content) && Objects.equals(timePost, post.timePost);
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postId=" + postId +
+                ", username='" + username + '\'' +
+                ", content='" + content + '\'' +
+                ", timePost=" + timePost +
+                '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(postID, user, content, timePost);
+        return Objects.hash(postId, username, content, timePost);
     }
 }

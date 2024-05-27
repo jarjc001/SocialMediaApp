@@ -5,36 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dd1f5d3-826c-4929-a586-683dc3e8a5bb" name="Changes" comment="completed tests for get user, need to finish tests for delete user and update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/SocialMediaPostApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/TestApplicationConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/controller/PostController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/DataBaseException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/PostDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/PostDaoDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dao/PostMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dto/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dto/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/dto/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/SocialMediaAppPost/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/SocialMediaAppPost/TestPostDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/SocialMediaUserApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/TestApplicationConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/DataBaseException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/UserDaoDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dao/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dto/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dto/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/dto/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/SocialMediaAppUser/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/test/java/com/SocialMediaAppUser/TestUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dao/DataBaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dao/UserDataBaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dao/UserDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dao/UserDaoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dto/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/java/com/socialmediaapp/socialmediaappuser/dto/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/test/java/com/socialmediaapp/socialmediaappuser/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/src/test/java/com/socialmediaapp/socialmediaappuser/TestUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocialMediaAppUser/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SocialMediaAppUser/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/socialmediaapp/socialmediaapppost/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/socialmediaapp/socialmediaapppost/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/socialmediaapp/socialmediaapppost/dto/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/socialmediaapp/socialmediaapppost/dto/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,18 +64,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/theon/Documents/Important_fouders/Java/SocialMediaApp&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/theon/Documents/Important_fouders/Java/SocialMediaApp/social-media-app-post",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\theon\Documents\Important_fouders\Java\TwitterCopy\src\test" />
@@ -101,33 +85,16 @@
       <recent name="com.TwitterCopy" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestPostDao">
-    <configuration name="TestPostDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialMediaAppPost" />
+  <component name="RunManager">
+    <configuration name="SocialMediaPostApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.socialmediaapp.socialmediaapppost.SocialMediaPostApplication" />
+      <module name="social-media-app-post" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.SocialMediaAppPost.*" />
+          <option name="PATTERN" value="com.socialmediaapp.socialmediaapppost.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.SocialMediaAppPost" />
-      <option name="MAIN_CLASS_NAME" value="com.SocialMediaAppPost.TestPostDao" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialMediaAppUser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.SocialMediaAppPost.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.SocialMediaAppUser" />
-      <option name="MAIN_CLASS_NAME" value="com.SocialMediaAppPost.TestUserDao" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,54 +110,6 @@
       <option name="PACKAGE_NAME" value="com.TwitterCopy" />
       <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao.testAddUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialMediaAppPost" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
-      <option name="METHOD_NAME" value="testAddUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialMediaAppPost" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUserDao.testGetUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialMediaAppPost" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.TwitterCopy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.TwitterCopy" />
-      <option name="MAIN_CLASS_NAME" value="com.TwitterCopy.TestUserDao" />
-      <option name="METHOD_NAME" value="testGetUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,10 +129,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestPostDao" />
-        <item itemvalue="JUnit.TestUserDao" />
-        <item itemvalue="JUnit.TestUserDao.testDeleteUser" />
-        <item itemvalue="JUnit.TestUserDao.testGetUser" />
+        <item itemvalue="Application.SocialMediaPostApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -342,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716140529262</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="completed tests for get user, need to finish tests for delete user and update">
+      <option name="closed" value="true" />
+      <created>1716826105595</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716826105595</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -12,19 +12,19 @@ public interface UserDao {
      * @param password password
      * @return If details are correct
      */
-    boolean authenticateUser(String username, char[] password) throws DataBaseException;
+    boolean authenticateUser(String username, char[] password) throws UserDataBaseException;
 
     /**
      * Get the user info from a given username
      */
-    User getUserByUsername(String username) throws DataBaseException;
+    User getUserByUsername(String username) throws UserDataBaseException;
 
 
     /**Add a new user to the database if the username is unique
      * @param user object with the info of new user
      * @return the user that has been added
      */
-    User addUser(User user) throws DataBaseException;
+    User addUser(User user) throws UserDataBaseException;
 
     /**
      * Checks if the username has been taken in db
@@ -43,7 +43,7 @@ public interface UserDao {
      * @param username username of user
      * @param password new password of user
      */
-    void updateUserPassword(String username, char[] password) throws DataBaseException;
+    void updateUserPassword(String username, char[] password) throws UserDataBaseException;
 
     /**delete user from database,
      * have to have username and password

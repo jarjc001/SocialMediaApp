@@ -24,14 +24,14 @@ public class UserDaoDB implements UserDao {
 
 
     @Override
-    public User getUserByUsername(String username) throws DataBaseException {
+    public User getUserByUsername(String username) throws UserDataBaseException {
         User user;
 
         final String SELECT_USERNAME = "SELECT * FROM userAccounts WHERE username = ?";
         try {
             user = jdbc.queryForObject(SELECT_USERNAME, new UserMapper(), username);
         } catch (DataAccessException e) { //Username not in db
-            throw new DataBaseException("Username not in DB");
+            throw new UserDataBaseException("Username not in DB");
         }
         return user;
 
@@ -40,7 +40,7 @@ public class UserDaoDB implements UserDao {
 
 
     @Override
-    public User addUser(User user) throws DataBaseException {
+    public User addUser(User user) throws UserDataBaseException {
         final String INSERT_USER = "INSERT INTO useraccounts" +
                 "(username,password,email,fullname)" +
                 " VALUES (?,?,?,?)";
@@ -52,7 +52,7 @@ public class UserDaoDB implements UserDao {
                     user.getEmail(),
                     user.getFullName());
         } catch (NullPointerException e) {
-            throw new DataBaseException("No password with user");
+            throw new UserDataBaseException("No password with user");
         }
 
         return user;
@@ -83,15 +83,15 @@ public class UserDaoDB implements UserDao {
 
     //todo
     @Override
-    public void updateUserPassword(String username, char[] password) throws DataBaseException {
+    public void updateUserPassword(String username, char[] password) throws UserDataBaseException {
         final String UPDATE_USER = "UPDATE userAccounts SET password = ? WHERE username = ?";
 
         try {
             jdbc.update(UPDATE_USER,
                     hashPassword(password),
                     username);
-        } catch (DataBaseException e) {
-            throw new DataBaseException("Could not update password");
+        } catch (UserDataBaseException e) {
+            throw new UserDataBaseException("Could not update password");
         }
     }
 
@@ -128,7 +128,7 @@ public class UserDaoDB implements UserDao {
      * @param password password to hash
      * @return hash password as a string
      */
-    private String hashPassword(char[] password) throws DataBaseException {
+    private String hashPassword(char[] password) throws UserDataBaseException {
 
         byte[] salt = generateSalt();
         byte[] hash = sha256(password, salt);
@@ -159,13 +159,13 @@ public class UserDaoDB implements UserDao {
      * @param salt     salt
      * @return hashed password as byte[]
      */
-    private byte[] sha256(char[] password, byte[] salt) throws DataBaseException {
+    private byte[] sha256(char[] password, byte[] salt) throws UserDataBaseException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(salt);
             return md.digest(new String(password).getBytes());
         } catch (NoSuchAlgorithmException e) {
-            throw new DataBaseException("Encription Failed");
+            throw new UserDataBaseException("Encription Failed");
         }
     }
 
@@ -197,7 +197,7 @@ public class UserDaoDB implements UserDao {
             clearPassword(password);
 
             return storedPassword.equals(Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash));
-        } catch (DataAccessException | NullPointerException | DataBaseException e) { //Wrong Username
+        } catch (DataAccessException | NullPointerException | UserDataBaseException e) { //Wrong Username
             return false;
         }
     }

@@ -1,7 +1,7 @@
 package com.socialmediaapp.socialmediaappuser;
 
 
-import com.socialmediaapp.socialmediaappuser.dao.DataBaseException;
+import com.socialmediaapp.socialmediaappuser.dao.UserDataBaseException;
 import com.socialmediaapp.socialmediaappuser.dao.UserDao;
 import com.socialmediaapp.socialmediaappuser.dto.User;
 import org.junit.jupiter.api.Assertions;
@@ -56,7 +56,7 @@ public class TestUserDao {
         }
         try {
             userDao.addUser(testUser1);
-        } catch (DataBaseException e) {
+        } catch (UserDataBaseException e) {
             System.out.println(e.getMessage());
         }
 
@@ -72,7 +72,7 @@ public class TestUserDao {
 
 
     @Test
-    void testAuthenticateUser() throws DataBaseException {
+    void testAuthenticateUser() throws UserDataBaseException {
         // authenticate a user given a password and username
 
         //test cases:
@@ -103,7 +103,7 @@ public class TestUserDao {
 
 
     @Test
-    void testAddUser() throws DataBaseException {
+    void testAddUser() throws UserDataBaseException {
         // add a user to the database
 
         //test cases
@@ -128,7 +128,7 @@ public class TestUserDao {
 
         try {
             userDao.addUser(testUser3);
-        } catch (DataBaseException e) {
+        } catch (UserDataBaseException e) {
             testPass = true;
         }
         Assertions.assertTrue(testPass, "User had no password");
@@ -146,7 +146,7 @@ public class TestUserDao {
 
         try {
             testUserFromDB = userDao.getUserByUsername(testUsername1);
-        } catch (DataBaseException e) {
+        } catch (UserDataBaseException e) {
             failTest = true;
         }
 
@@ -160,7 +160,7 @@ public class TestUserDao {
         try {
             testUserFromDB = userDao.getUserByUsername(wrongUsername);
             failTest = true;
-        } catch (DataBaseException ignored) {
+        } catch (UserDataBaseException ignored) {
         }
 
         Assertions.assertFalse(failTest, "Username not in DB");
